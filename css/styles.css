@@ -1,0 +1,331 @@
+
+
+
+
+
+/* Add this at the beginning of your styles.css */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure the body takes up the full height of the viewport */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body covers the full viewport height */
+}
+
+header, footer {
+    flex-shrink: 0; /* Prevent header and footer from shrinking */
+}
+
+.main-content {
+    flex: 1; /* Allow main content to expand and fill available space */
+}
+
+footer {
+    margin-top: auto; /* Push footer to the bottom of the viewport */
+}
+
+body {
+    font-family: 'Copperplate', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f7f7f7;
+}
+h1, h2, h3, h4, h5, h6, p, a {
+    font-family: 'Copperplate', serif;
+}
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px; /* Adjust padding to reduce header height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1 {
+    margin: 0;
+    font-size: 1.8em; /* Adjust the font size if needed */
+}
+
+nav {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0 10px; /* Adjust margin between menu items */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em; /* Adjust font size to fit within the reduced height */
+    padding: 5px 10px; /* Adjust padding to reduce the height of each menu item */
+}
+
+nav a:hover {
+    background: #555; /* Optional: add a hover background color */
+    border-radius: 4px; /* Optional: add rounded corners */
+}
+
+h1, h2 {
+    margin: 20px 0;
+    color: #333;
+}
+
+.landing, .contact-form, .gallery {
+    padding: 20px;
+    text-align: center;
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+.gallery {
+    padding: 20px;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery h2 {
+    color: #333;
+}
+
+
+.gallery-grid img:hover {
+    transform: scale(1.05);  /* Slight zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  /* Larger shadow */
+}
+
+
+
+
+/* Existing styles... */
+/* Existing styles... */
+
+.contact-page {
+    position: relative;
+    background-image: url('../images/Angelina-Alekseeva4.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1); /* White background with 70% opacity */
+    padding: 40px; /* Adjust padding as needed */
+    border-radius: 0; /* Remove rounded corners */
+    box-shadow: none; /* Remove shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */
+}
+
+.contact-title {
+    margin-top: -400px; /* Adjust this value to move the title higher or lower */
+    width: 100%; /* Ensure full width for alignment */
+    
+}
+
+.contact-info-content {
+    max-width: 800px; /* Set a maximum width for the text content */
+    width: 100%; /* Ensure it takes full width up to the max-width */
+    color: #fff; /* Set font color to white */
+}
+
+.contact-info h2 {
+    font-size: 3em; /* Increase font size */
+    margin-bottom: 20px;
+    color: #000; /* Set font color to white */
+}
+
+.contact-info p {
+    font-size: 1.2em;
+    line-height: 1.4; /* Reduce line height to bring body text closer together */
+    margin-bottom: 10px; /* Reduce spacing between paragraphs */
+}
+
+.contact-info a {
+    color: #fff; /* Set link color to white */
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+.hero {
+    background: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Existing styles... */
+.image-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflow for zoom effect */
+    display: flex;
+    align-items: center; /* Center the image vertically */
+    justify-content: center; /* Center the image horizontally */
+}
+
+
+
+.image-section img {
+    min-height: 100%; /* Ensure the image fills the height */
+    min-width: 100%; /* Ensure the image fills the width */
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+    transition: transform 0.5s ease; /* Smooth zoom effect */
+}
+
+.image-section:hover img {
+    transform: scale(1.1); /* Slightly zoom in on hover */
+}
+
+.image-section:focus-within img {
+    transform: scale(1.1); /* Slightly zoom in when the section is focused */
+}
+
+/* Mission Section */
+.vision-container {
+    background: #f4f4f4; /* Light background for contrast */
+    padding: 40px;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+.vision-content {
+    background: #fff; /* White background for content box */
+    padding: 40px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 800px; /* Max width for readability */
+    text-align: center; /* Center text */
+}
+
+.vision-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.vision-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Footer and other styles */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* review page */
+/* New CSS rule for background image on Reviews page */
+.reviews-page-bg {
+    background-image: url('../images/south-haven-custom-home-interiors.jpeg'); /* Replace with your background image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.reviews-page {
+    padding: 20px;
+    text-align: center;
+    background: rgba(103, 123, 133, 0.5); /* Semi-transparent white background for content area */
+    border-radius: 10px; /* Optional: add rounded corners */
+    max-width: 1200px; /* Optional: limit width for better content alignment */
+    margin: 120px auto; /* Center the content with margin */
+}
+
+.carousel {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.carousel-item {
+    padding: 20px;
+    font-size: 1.2em;
+    color: black;
+}
+
+.carousel-item p {
+    margin: 0;
+}
+
+.rating {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.rating span {
+    color: gold;
+}
