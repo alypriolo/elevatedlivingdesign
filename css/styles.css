@@ -1,58 +1,50 @@
-
-
-
-
-
-/* Add this at the beginning of your styles.css */
+/* Global styles */
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Ensure the body takes up the full height of the viewport */
+    height: 100%; 
 }
 
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure the body covers the full viewport height */
+    min-height: 100vh;
 }
 
 header, footer {
-    flex-shrink: 0; /* Prevent header and footer from shrinking */
+    flex-shrink: 0; 
 }
 
 .main-content {
-    flex: 1; /* Allow main content to expand and fill available space */
+    position: relative; /* Ensure it’s positioned correctly within the document flow */
+    flex: 1;
+    z-index: 2; /* Ensure it’s above background elements if needed */
 }
 
+
 footer {
-    margin-top: auto; /* Push footer to the bottom of the viewport */
+    margin-top: auto;
 }
 
 body {
     font-family: 'Copperplate', serif;
-    margin: 0;
-    padding: 0;
+    background-color: #333;
     box-sizing: border-box;
-    background-color: #f7f7f7;
 }
-h1, h2, h3, h4, h5, h6, p, a {
-    font-family: 'Copperplate', serif;
-}
+
+/* Header and Navigation */
 header {
     background: #333;
-    color: #fff;
-    padding: 10px 20px; /* Adjust padding to reduce header height */
+    color: rgb(172, 140, 140);
+    padding: 10px 20px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 header h1 {
     margin: 0;
-    font-size: 1.8em; /* Adjust the font size if needed */
-}
-
-nav {
-    margin: 0;
+    font-size: 1.8em; 
 }
 
 nav ul {
@@ -63,39 +55,33 @@ nav ul {
 }
 
 nav li {
-    margin: 0 10px; /* Adjust margin between menu items */
+    margin: 0 10px; 
 }
 
 nav a {
-    color: #fff;
+    color: rgb(172, 140, 140);
     text-decoration: none;
-    font-size: 1em; /* Adjust font size to fit within the reduced height */
-    padding: 5px 10px; /* Adjust padding to reduce the height of each menu item */
+    font-size: 1em;
+    padding: 5px 10px; 
 }
 
 nav a:hover {
-    background: #555; /* Optional: add a hover background color */
-    border-radius: 4px; /* Optional: add rounded corners */
+    background: #555;
+    border-radius: 4px; 
 }
 
-h1, h2 {
-    margin: 20px 0;
-    color: #333;
-}
-
+/* Content */
 .landing, .contact-form, .gallery {
     padding: 20px;
     text-align: center;
+    color: rgb(214, 219, 219);
 }
-
 
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    bottom: 0;
     width: 100%;
 }
 
@@ -116,11 +102,8 @@ button {
 button:hover {
     background-color: #555;
 }
-.gallery {
-    padding: 20px;
-    text-align: center;
-}
 
+/* Gallery */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -136,22 +119,12 @@ button:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.gallery h2 {
-    color: #333;
-}
-
-
 .gallery-grid img:hover {
-    transform: scale(1.05);  /* Slight zoom effect */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  /* Larger shadow */
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  
 }
 
-
-
-
-/* Existing styles... */
-/* Existing styles... */
-
+/* Contact Page */
 .contact-page {
     position: relative;
     background-image: url('../images/Angelina-Alekseeva4.jpeg');
@@ -170,43 +143,35 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.1); /* White background with 70% opacity */
-    padding: 40px; /* Adjust padding as needed */
-    border-radius: 0; /* Remove rounded corners */
-    box-shadow: none; /* Remove shadow */
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Center text */
-}
-
-.contact-title {
-    margin-top: -400px; /* Adjust this value to move the title higher or lower */
-    width: 100%; /* Ensure full width for alignment */
-    
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .contact-info-content {
-    max-width: 800px; /* Set a maximum width for the text content */
-    width: 100%; /* Ensure it takes full width up to the max-width */
-    color: #fff; /* Set font color to white */
+    max-width: 800px; 
+    width: 100%; 
+    color: #fff; 
 }
 
 .contact-info h2 {
-    font-size: 3em; /* Increase font size */
+    font-size: 3em;
     margin-bottom: 20px;
-    color: #000; /* Set font color to white */
+    color: #fff;
 }
 
 .contact-info p {
     font-size: 1.2em;
-    line-height: 1.4; /* Reduce line height to bring body text closer together */
-    margin-bottom: 10px; /* Reduce spacing between paragraphs */
+    line-height: 1.4; 
+    margin-bottom: 10px;
 }
 
 .contact-info a {
-    color: #fff; /* Set link color to white */
+    color: #fff;
     text-decoration: none;
     font-size: 1.2em;
 }
@@ -215,59 +180,44 @@ button:hover {
     text-decoration: underline;
 }
 
-
-
-
-.hero {
-    background: #f4f4f4;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Existing styles... */
+/* Image Section */
 .image-section {
     position: relative;
     width: 100%;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Hide overflow for zoom effect */
+    height: 100vh;
+    overflow: hidden;
     display: flex;
-    align-items: center; /* Center the image vertically */
-    justify-content: center; /* Center the image horizontally */
+    align-items: center;
+    justify-content: center;
 }
 
-
-
 .image-section img {
-    min-height: 100%; /* Ensure the image fills the height */
-    min-width: 100%; /* Ensure the image fills the width */
-    object-fit: cover; /* Cover the container while maintaining aspect ratio */
-    transition: transform 0.5s ease; /* Smooth zoom effect */
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
 .image-section:hover img {
-    transform: scale(1.1); /* Slightly zoom in on hover */
-}
-
-.image-section:focus-within img {
-    transform: scale(1.1); /* Slightly zoom in when the section is focused */
+    transform: scale(1.1); 
 }
 
 /* Mission Section */
 .vision-container {
-    background: #f4f4f4; /* Light background for contrast */
+    background: #f4f4f4;
     padding: 40px;
     display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    justify-content: center;
+    align-items: center;
 }
 
 .vision-content {
-    background: #fff; /* White background for content box */
+    background: rgb(207, 187, 187);
     padding: 40px;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    max-width: 800px; /* Max width for readability */
-    text-align: center; /* Center text */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    text-align: center;
 }
 
 .vision-content h2 {
@@ -281,29 +231,21 @@ button:hover {
     margin-bottom: 20px;
 }
 
-/* Footer and other styles */
-footer {
-    background: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-/* review page */
-/* New CSS rule for background image on Reviews page */
+/* Review Page */
 .reviews-page-bg {
-    background-image: url('../images/south-haven-custom-home-interiors.jpeg'); /* Replace with your background image path */
+    background-image: url('../images/south-haven-custom-home-interiors.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
+
 .reviews-page {
     padding: 20px;
     text-align: center;
-    background: rgba(103, 123, 133, 0.5); /* Semi-transparent white background for content area */
-    border-radius: 10px; /* Optional: add rounded corners */
-    max-width: 1200px; /* Optional: limit width for better content alignment */
-    margin: 120px auto; /* Center the content with margin */
+    background: rgba(103, 123, 133, 0.5);
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 120px auto;
 }
 
 .carousel {
@@ -314,7 +256,7 @@ footer {
 .carousel-item {
     padding: 20px;
     font-size: 1.2em;
-    color: black;
+    color: rgb(252, 250, 250);
 }
 
 .carousel-item p {
@@ -328,4 +270,135 @@ footer {
 
 .rating span {
     color: gold;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); 
+    }
+
+    .contact-info-content {
+        padding: 20px;
+        font-size: 1em; 
+    }
+
+    .vision-content {
+        padding: 20px;
+    }
+
+    .carousel {
+        width: 100%; /* Full width on mobile */
+    }
+
+    .carousel-item {
+        padding: 10px;
+        font-size: 1em;
+    }
+}
+
+/*how it works aka Process carousel*/
+/* Positioning for carousel over the image */
+/* Ensure the text content above the image is visible */
+
+.landing {
+    position: relative; /* Ensure it’s in the normal flow of the document */
+    z-index: 2; /* Ensure it is above other content if necessary */
+    padding: 20px;
+    text-align: center;
+    background: #333; /* Optional: background for better readability */
+    margin-top: 20px; /* Ensure some space above if needed */
+}
+/* Ensure the carousel container does not cover other content */
+.carousel-container {
+    position: absolute;
+    top: 50%; /* Adjust if necessary to ensure content is visible */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Ensure it is above other content if needed */
+}
+
+
+
+
+/* Ensure the image section does not overlap the text */
+.image-section {
+    position: relative;
+    z-index: 1; /* Ensure it is below the landing section */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.image-section img {
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Carousel styling */
+.carousel-item {
+    text-align: center;
+    padding: 20px;
+    color: #333;
+}
+
+.carousel-item h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.carousel-item p {
+    font-size: 1.2em;
+    line-height: 1.4;
+}
+
+.slick-dots {
+    bottom: -30px; /* Move dots further down */
+}
+
+.slick-prev, .slick-next {
+    color: #333; /* Style navigation arrows */
+}
+/* Carousel dots styling */
+.slick-dots {
+    display: flex;
+    justify-content: center; /* Center the dots horizontally */
+    margin-top: 15px; /* Add space between the dots and the content */
+}
+
+.slick-dots li {
+    display: inline-block; /* Display dots inline */
+    margin: 0 5px; /* Add space between dots */
+}
+
+.slick-dots li button {
+    font-size: 0; /* Hide the default button text */
+    width: 12px; /* Set the size of the dot */
+    height: 12px;
+    background-color: #333; /* Default dot color */
+    border-radius: 50%; /* Make dots circular */
+}
+
+.slick-dots li.slick-active button {
+    background-color: #555; /* Active dot color */
 }

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Elevated Living Design & Concierge</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Include Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Elevated Living Design & Concierge</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="process.html">Process</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-content">  
+        <section class="landing">
+            <h2>How It Works</h2>
+            <p>At Elevated Living Designs, we offer a comprehensive, concierge-level interior living service that ensures every detail of your design project is handled with care and precision. We understand that creating the perfect space can be overwhelming, so we take the stress out of the process by providing a seamless, turn-key solution.</p>
+        </section>
+        <!-- Image Section -->
+        <section class="image-section">
+            <img src="images/Contemporary-Hacienda-by-Becker-Studios-With-images-Ranch-....jpg" alt="Elegant Home Interior">
+            <!-- Carousel Container -->
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item">
+                        <h2>Initial Consultation</h2>
+                        <p>Your journey begins with an in-depth consultation. We take the time to understand your vision, style preferences, and lifestyle needs.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h2>Design Concept</h2>
+                        <p>Based on our consultation, we present you with a curated design concept that reflects your vision.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h2>Ordering & Sourcing</h2>
+                        <p>We take charge of sourcing and ordering every item required for your project.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h2>Tracking & Management</h2>
+                        <p>Our team handles all logistics, ensuring everything arrives on time and in perfect condition.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h2>Installation & Styling</h2>
+                        <p>We handle the installation and styling of your space, ensuring it's ready for you to enjoy immediately.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Elevated Living Design & Concierge. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Include jQuery and Slick Carousel JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 4000
+            });
+        });
+    </script>
+</body>
+</html>
