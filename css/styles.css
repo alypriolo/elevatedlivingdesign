@@ -71,117 +71,39 @@ nav a:hover {
     border-radius: 4px;
 }
 
-/* Default state for desktop */
-.desktop-nav {
-    display: block;
-}
-
-.mobile-nav, .hamburger {
-    display: none;
-}
-
-nav {
-    display: flex; /* Show desktop navigation by default */
-}
-
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-}
-
-/* Mobile Navigation Menu */
-
-
 /* Mobile Styles */
 @media only screen and (max-width: 768px) {
     header {
-        padding: 5px 10px; /* Smaller padding */
-        flex-direction: row; /* Align items horizontally */
-        justify-content: space-between; /* Space between logo and hamburger */
-        height: auto; /* Flexible height */
-        min-height: 50px; /* Reduced minimum height */
-    }
-    .desktop-nav {
-        display: nsone;
+        padding: 5px 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        height: auto;
     }
 
-    .mobile-nav, .hamburger {
-        display: block;
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start; /* Ensures proper alignment on smaller screens */
     }
 
-
-    .mobile-nav {
-        display: none; /* Hide mobile navigation by default */
-        position: absolute;
-        top: 50px; /* Adjust to match header height */
-        right: 0;
-        background: #333;
-        width: 100%; /* Full width on mobile */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        z-index: 10;
+    nav a {
+        font-size: 0.9em;
+        padding: 10px 0;
     }
 
-
-    .hamburger {
-        display: flex; /* Show hamburger menu */
-        flex-direction: column; 
-        gap: 4px; /* Space between hamburger bars */
-        cursor: pointer;
-    }
-    .hamburger .bar {
-        width: 25px; /* Adjust size of hamburger bars */
-        height: 3px;
-        background-color: #fff;
-    }
-
-    nav {
-        display: none; /* Hide desktop navigation */
-    }
-
-    
-
-    .mobile-nav.active {
-        display: block; /* Show mobile navigation when active */
-    }
-
-    .mobile-nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .mobile-nav li {
-        border-bottom: 1px solid #555;
-    }
-
-    .mobile-nav a {
-        display: block;
-        padding: 15px;
-        color: #fff;
-        text-decoration: none;
-    }
-
-    .mobile-nav a:hover {
-        background: #555;
-    }
-     /* Reduce font size of the header title for mobile */
-     header h1 {
+    header h1 {
         font-size: 1.5em;
     }
-    
 
+    /* Make gallery responsive for mobile */
     .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
     }
 
-    /* Contact info font size reduction */
     .contact-info-content {
         padding: 20px;
         font-size: 1em;
     }
 }
-
 
 /* Content */
 .landing, .contact-form, .gallery {
@@ -354,22 +276,16 @@ button:hover {
     margin: 120px auto;
 }
 
-/* Make text inside reviews carousel and header white */
 .reviews-page h2,
 .reviews-page .carousel-item {
-    color: #fff; /* Set text color to white */
+    color: #fff;
 }
 
-/* If you have specific headings or paragraphs inside the carousel, you can also target them: */
-.reviews-page .carousel-item h2,
 .reviews-page .carousel-item p {
-    color: #fff; /* Set heading and paragraph text to white */
-}
-/* Global styling for carousel body text */
-.reviews-page .carousel-item p {
-    font-size: 1.2em; /* Default font size on desktop */
+    font-size: 1.2em;
 }
 
+/* Carousel */
 .carousel {
     width: 80%;
     margin: 0 auto;
@@ -381,172 +297,31 @@ button:hover {
     color: rgb(252, 250, 250);
 }
 
-.carousel-item p {
-    margin: 0;
-}
- /* Hide the carousel arrows */
- .slick-prev, .slick-next {
-    display: none !important; /* Ensure arrows are hidden */
-    }
-
-.rating {
-    margin-top: 20px;
-    font-size: 1.5em;
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
 }
 
-.rating span {
-    color: gold;
-    font-size: 1.5em; /* Default size for star ratings */
+.slick-dots li {
+    list-style: none;
+    margin: 0 5px;
+}
+
+.slick-dots li button {
+    width: 12px;
+    height: 12px;
+    background-color: #333;
+    border-radius: 50%;
+    border: none;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #555;
 }
 
 
 
-
-
-/* Mobile Styles */
-/* Reviews Page Carousel - Mobile Styles */
-@media only screen and (max-width: 768px) {
-    header {
-        padding: 10px;
-        flex-direction: column;
-        height: auto; /* Adjust the height as needed */
-        min-height: 60px; /* Set a minimum height */
-    }
-
-    nav ul {
-        flex-direction: column;
-        display: none; /* Hide the menu by default */
-    }
-
-    .hamburger {
-        display: block; /* Show hamburger menu */
-        cursor: pointer;
-    }
-    header h1 {
-        font-size: 1.5em; /* Adjust header size if needed */
-    }
-    .mobile-nav {
-        display: none; /* Hide mobile navigation by default */
-        position: absolute;
-        top: 60px; /* Adjust as needed to position it below the header */
-        right: 0;
-        background: #333;
-        width: 100%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        z-index: 10; /* Ensure it's above other content */
-    }
-    
-    .mobile-nav.active {
-        display: block; /* Show mobile navigation when active */
-    }
-    
-    .mobile-nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    
-    .mobile-nav li {
-        border-bottom: 1px solid #555;
-    }
-    
-    .mobile-nav a {
-        display: block;
-        padding: 15px;
-        color: #fff;
-        text-decoration: none;
-    }
-    
-    .mobile-nav a:hover {
-        background: #555;
-    }
-
-    
-
-    nav li {
-        margin: 5px 0;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-    }
-
-    .contact-info-content {
-        padding: 20px;
-        font-size: 1em;
-    }
-
-    .vision-content {
-        padding: 20px;
-    }
-    .reviews-page {
-        padding: 10px;
-        margin: 40px auto; /* Further reduce margin */
-        max-width: 100%; /* Ensure it doesn't exceed screen width */
-        box-sizing: border-box; /* Ensure padding is included within the width */
-    }
-
-    .carousel {
-        width: 100%; /* Full width on mobile */
-        max-width: 100%; /* Constrain to screen width */
-        padding: 0 10px; /* Add some horizontal padding */
-        box-sizing: border-box; /* Include padding in width calculations */
-    }
-
-    .carousel-item {
-        padding: 10px;
-        font-size: 1em;
-        word-wrap: break-word; /* Ensure long text wraps properly */
-    }
-    .reviews-page .carousel-item p {
-        font-size: 1em; /* Smaller font size on mobile */
-    }
-
-    .slick-dots {
-        bottom: -20px; /* Adjust dot position */
-    }
-    /* Hide the carousel arrows */
-    .slick-prev, .slick-next {
-    display: none !important; /* Ensure arrows are hidden */
-    }
-    .rating {
-        font-size: 1em; /* Smaller font size for rating text on mobile */
-    }
-
-    .rating span {
-        font-size: 1em; /* Smaller size for stars on mobile */
-    }
-    
-
-
-
-
-    .landing, .contact-form, .gallery {
-        padding: 10px;
-    }
-
-    .contact-page {
-        height: auto;
-        padding: 20px;
-    }
-
-    .image-section {
-        height: 50vh;
-    }
-
-    .vision-container, .reviews-page {
-        padding: 20px;
-    }
-
-    .reviews-page {
-        margin: 40px auto;
-    }
-
-    footer {
-        font-size: 0.9em;
-        padding: 10px;
-    }
-}
 
 /* Process carousel */
 .landing {
@@ -638,5 +413,29 @@ button:hover {
 .slick-dots li.slick-active button {
     background-color: #555; /* Active dot color */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
