@@ -4,59 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How We Work - Elevated Living Design & Concierge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Include Slick Carousel CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 </head>
 <body>
     <header>
-        
-        
-        <!-- Desktop Navigation -->
         <nav class="desktop-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="process.html">Process</a></li>
+                <li><a href="process.html" class="active">Process</a></li>
                 <li><a href="reviews.html">Reviews</a></li>
                 <li><a href="contact.html">Inquiries</a></li>
             </ul>
         </nav>
-    
-       
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
     </header>
-    <div class="main-content">  
-        <section class="landing">
-            <h2>How We Work</h2>
-            <p>At Elevated Living Designs, we offer a comprehensive, concierge-level interior living service that ensures every detail of your design project is handled with care and precision. We understand that creating the perfect space can be overwhelming, so we take the stress out of the process by providing a seamless, turn-key solution.</p>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="process.html" class="active">Process</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Inquiries</a></li>
+        </ul>
+    </nav>
+    <div class="nav-overlay"></div>
+
+    <div class="main-content">
+        <!-- Hero -->
+        <section class="process-hero">
+            <img src="images/Contemporary-Hacienda-by-Becker-Studios-With-images-Ranch-....jpg" alt="Elegant Home Interior" loading="lazy">
+            <div class="process-hero__overlay">
+                <h2>How We Work</h2>
+                <p>A seamless, concierge-level experience from first conversation to final installation.</p>
+            </div>
         </section>
-        <!-- Image Section -->
-        <section class="image-section">
-            <img src="images/Contemporary-Hacienda-by-Becker-Studios-With-images-Ranch-....jpg" alt="Elegant Home Interior">
-            <!-- Carousel Container -->
-            <div class="carousel-container">
-                <div class="carousel">
-                    <div class="carousel-item">
-                        <h2>1. Initial Consultation</h2>
-                        <p>Your journey begins with an in-depth consultation. We take the time to understand your vision, style preferences, and lifestyle needs.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <h2>2. Design Concept</h2>
-                        <p>Based on our consultation, we present you with a curated design concept that reflects your vision.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <h2>3. Ordering & Sourcing</h2>
-                        <p>We take charge of sourcing and ordering every item required for your project.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <h2>4. Tracking & Management</h2>
-                        <p>Our team handles all logistics, ensuring everything arrives on time and in perfect condition.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <h2>5. Installation & Styling</h2>
-                        <p>We handle the installation and styling of your space, ensuring it's ready for you to enjoy immediately.</p>
+
+        <!-- Steps -->
+        <section class="process-steps-section">
+            <div class="process-steps">
+
+                <div class="process-step fade-in">
+                    <span class="process-step__num">01</span>
+                    <div class="process-step__body">
+                        <h3>Initial Consultation</h3>
+                        <p>Your journey begins with an in-depth conversation. We take the time to understand your vision, style preferences, and lifestyle needs — so every decision that follows is rooted in what matters to you.</p>
                     </div>
                 </div>
+
+                <div class="process-step fade-in">
+                    <span class="process-step__num">02</span>
+                    <div class="process-step__body">
+                        <h3>Design Concept</h3>
+                        <p>Based on our consultation, we present a curated design concept that reflects your vision — from furniture selections and finishes to spatial flow and styling direction.</p>
+                    </div>
+                </div>
+
+                <div class="process-step fade-in">
+                    <span class="process-step__num">03</span>
+                    <div class="process-step__body">
+                        <h3>Ordering & Sourcing</h3>
+                        <p>We take full charge of sourcing and ordering every item required for your project. You approve, we execute — with access to vendors and pieces you won't find on your own.</p>
+                    </div>
+                </div>
+
+                <div class="process-step fade-in">
+                    <span class="process-step__num">04</span>
+                    <div class="process-step__body">
+                        <h3>Tracking & Logistics</h3>
+                        <p>Our team manages all logistics end-to-end, ensuring everything arrives on time and in perfect condition. No coordinating deliveries, no chasing vendors — we handle it all.</p>
+                    </div>
+                </div>
+
+                <div class="process-step fade-in">
+                    <span class="process-step__num">05</span>
+                    <div class="process-step__body">
+                        <h3>Installation & Styling</h3>
+                        <p>We handle the installation and final styling of your space. When we're done, your home is ready for you to walk in and enjoy — no assembly, no decisions left to make.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
     </div>
@@ -65,23 +98,6 @@
         <p>&copy; 2024 Elevated Living Design & Concierge. All Rights Reserved.</p>
     </footer>
 
-    <!-- Include jQuery and Slick Carousel JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-    <script>
-        $(document).ready(function(){
-            $('.carousel').slick({
-                dots: true,
-                infinite: true,
-                speed: 500,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 4000
-            });
-        });
-    </script>
     <script src="js/script.js"></script>
 </body>
 </html>

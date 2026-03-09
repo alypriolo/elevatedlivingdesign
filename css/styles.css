@@ -2,14 +2,26 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; 
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+}
+
+p, a, li, input, textarea, button, label {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
 }
 
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'Copperplate', serif;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
     background-color: #333;
     box-sizing: border-box;
 }
@@ -46,6 +58,9 @@ header {
 header h1 {
     margin: 0;
     font-size: 1.8em;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    letter-spacing: 0.08em;
 }
 
 nav ul {
@@ -71,6 +86,84 @@ nav a:hover {
     border-radius: 4px;
 }
 
+/* Hamburger Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    z-index: 201;
+}
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: rgb(172, 140, 140);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile nav drawer */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 260px;
+    height: 100vh;
+    background: #2a2a2a;
+    z-index: 200;
+    padding: 70px 24px 24px;
+    transition: right 0.3s ease;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.4);
+}
+.mobile-nav.active { right: 0; }
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.mobile-nav a {
+    display: block;
+    color: rgb(214, 219, 219);
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1em;
+    padding: 10px 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+.mobile-nav a:hover,
+.mobile-nav a.active { background: #444; }
+
+/* Nav overlay */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 199;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.nav-overlay.active { opacity: 1; }
+
+/* Active nav link */
+nav a.active {
+    background: #555;
+    border-radius: 4px;
+}
+
 /* Mobile Styles */
 @media only screen and (max-width: 768px) {
     header {
@@ -80,19 +173,10 @@ nav a:hover {
         height: auto;
     }
 
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start; /* Ensures proper alignment on smaller screens */
-    }
-
-    nav a {
-        font-size: 0.9em;
-        padding: 10px 0;
-    }
-
-    header h1 {
-        font-size: 1.5em;
-    }
+    .desktop-nav { display: none; }
+    .hamburger   { display: flex; }
+    .mobile-nav  { display: block; }
+    .nav-overlay { display: block; }
 
     /* Make gallery responsive for mobile */
     .gallery-grid {
@@ -157,55 +241,67 @@ button:hover {
     background-image: url('../images/Angelina-Alekseeva4.jpeg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
+    background-attachment: fixed;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .contact-info {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    padding: 120px 40px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact-title {
+    grid-column: 1 / -1;
 }
 
 .contact-info-content {
-    max-width: 800px;
-    width: 100%;
-    color: #fff;
+    color: #f5ede6;
+    background: rgba(40, 24, 14, 0.78);
+    border-radius: 10px;
+    padding: 28px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    margin-top: 24px;
 }
 
 .contact-info h2 {
-    margin-top: -10px;
-    font-size: 4em;
-    margin-bottom: 100px;
+    font-size: 3em;
+    margin: 0 0 8px;
     color: #fff;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
 }
 
 .contact-info p {
-    font-size: 1.2em;
-    line-height: 1.4;
-    margin-bottom: 5px;
+    font-size: 1.05em;
+    line-height: 1.7;
+    margin-bottom: 8px;
 }
 
 .contact-info a {
-    color: #fff;
+    color: rgb(214, 200, 200);
     text-decoration: none;
-    font-size: 1.2em;
 }
 
 .contact-info a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .contact-info {
+        grid-template-columns: 1fr;
+        padding: 100px 24px 48px;
+    }
+    .contact-info h2 { font-size: 2em; }
 }
 
 /* Image Section */
@@ -251,6 +347,9 @@ button:hover {
 .vision-content h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    letter-spacing: 0.04em;
 }
 
 .vision-content p {
@@ -259,164 +358,402 @@ button:hover {
     margin-bottom: 20px;
 }
 
-/* Review Page */
+/* ── Reviews Page ── */
 .reviews-page-bg {
     background-image: url('../images/south-haven-custom-home-interiors.jpeg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-.reviews-page {
-    padding: 20px;
+.reviews-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 40px 80px;
+    position: relative;
+    background: rgba(16, 10, 6, 0.62);
+}
+
+.reviews-section__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    width: 100%;
     text-align: center;
-    background: rgba(103, 123, 133, 0.5);
-    border-radius: 10px;
-    max-width: 1200px;
-    margin: 120px auto;
 }
 
-.reviews-page h2,
-.reviews-page .carousel-item {
+.reviews-section__eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgb(172, 140, 140);
+    margin-bottom: 16px;
+}
+
+.reviews-section h2 {
     color: #fff;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    margin-bottom: 64px;
 }
 
-.reviews-page .carousel-item p {
-    font-size: 1.2em;
+.review-track {
+    position: relative;
+    min-height: 220px;
+    margin-bottom: 48px;
 }
 
-/* Carousel */
-.carousel {
-    width: 80%;
-    margin: 0 auto;
+.review-card {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.9s ease;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
-.carousel-item {
-    padding: 20px;
-    font-size: 1.2em;
-    color: rgb(252, 250, 250);
+.review-card.active {
+    opacity: 1;
+    pointer-events: auto;
 }
 
-.slick-dots {
+.review-card__quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+    font-weight: 300;
+    font-style: italic;
+    color: #f5ede6;
+    line-height: 1.85;
+    position: relative;
+    padding: 0 32px;
+}
+
+.review-card__quote::before {
+    content: '\201C';
+    font-size: 6rem;
+    line-height: 0;
+    color: rgb(172, 140, 140);
+    opacity: 0.4;
+    position: absolute;
+    top: 1.2rem;
+    left: 0;
+    font-style: normal;
+}
+
+.review-card__author {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgb(172, 140, 140);
+}
+
+.review-card__stars {
+    color: rgb(172, 140, 140);
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+}
+
+.review-dots {
     display: flex;
     justify-content: center;
-    margin-top: 15px;
+    gap: 12px;
 }
 
-.slick-dots li {
-    list-style: none;
-    margin: 0 5px;
-}
-
-.slick-dots li button {
-    width: 12px;
-    height: 12px;
-    background-color: #333;
+.review-dot {
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
+    background: rgba(172, 140, 140, 0.3);
     border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s, transform 0.3s;
 }
 
-.slick-dots li.slick-active button {
-    background-color: #555;
+.review-dot.active {
+    background: rgb(172, 140, 140);
+    transform: scale(1.5);
 }
 
 
 
 
-/* Process carousel */
-.landing {
+/* ── Process Page ── */
+.process-hero {
     position: relative;
-    z-index: 2;
-    padding: 20px;
-    text-align: center;
-    background: #333;
-    margin-top: 20px;
-}
-
-.carousel-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 80%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-}
-
-.image-section {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100vh;
+    height: 65vh;
     overflow: hidden;
+}
+
+.process-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.process-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 12, 8, 0.52);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px 40px;
+}
+
+.process-hero__overlay h2 {
+    color: #fff;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    letter-spacing: 0.14em;
+    margin: 0 0 20px;
+}
+
+.process-hero__overlay p {
+    color: rgba(245, 237, 230, 0.82);
+    font-size: 1rem;
+    max-width: 560px;
+    line-height: 1.85;
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+.process-steps-section {
+    background: #2a2a2a;
+    padding: 80px 40px;
+}
+
+.process-steps {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.process-step {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 44px 0;
+    border-bottom: 1px solid rgba(172, 140, 140, 0.15);
+}
+
+.process-step:last-child {
+    border-bottom: none;
+}
+
+.process-step__num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: rgb(172, 140, 140);
+    opacity: 0.45;
+    line-height: 1;
+    min-width: 64px;
+    text-align: right;
+    padding-top: 4px;
+}
+
+.process-step__body h3 {
+    color: #f5ede6;
+    font-size: 1.15rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    margin: 0 0 14px;
+    text-transform: uppercase;
+}
+
+.process-step__body p {
+    color: rgba(214, 219, 219, 0.7);
+    font-size: 0.93rem;
+    line-height: 1.9;
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    .process-hero { height: 50vh; }
+    .process-steps-section { padding: 56px 24px; }
+    .process-step { gap: 24px; }
+    .process-step__num { font-size: 2.2rem; min-width: 44px; }
+}
+
+/* ── Scroll Fade-in ───────────────────────────────────────────────────────── */
+.fade-in {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── Gallery Lightbox ────────────────────────────────────────────────────── */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+.lightbox.active { display: flex; }
+
+.lightbox__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+}
+.lightbox__img {
+    position: relative;
+    max-width: 90vw;
+    max-height: 88vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+    z-index: 1;
+}
+.lightbox__close,
+.lightbox__prev,
+.lightbox__next {
+    position: absolute;
+    background: rgba(255,255,255,0.12);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    z-index: 2;
+}
+.lightbox__close:hover,
+.lightbox__prev:hover,
+.lightbox__next:hover { background: rgba(255,255,255,0.25); }
+
+.lightbox__close {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.6rem;
+    line-height: 1;
+}
+.lightbox__prev,
+.lightbox__next {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    font-size: 2.2rem;
+    line-height: 1;
+}
+.lightbox__prev { left: 16px; }
+.lightbox__next { right: 16px; }
+
+/* ── Back-to-top Button ──────────────────────────────────────────────────── */
+.back-to-top {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgb(172, 140, 140);
+    color: #fff;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 500;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-.image-section img {
-    min-height: 100%;
-    min-width: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
+.back-to-top:hover { background: #b08080; }
 
-/* Carousel styling */
-.carousel-item {
-    text-align: center;
-    padding: 20px;
-    color: #333;
+/* ── Contact Form ────────────────────────────────────────────────────────── */
+.contact-form-section {
+    position: relative;
+    z-index: 1;
+    background: rgba(40, 24, 14, 0.78);
+    border-radius: 10px;
+    padding: 28px 28px 24px;
+    max-width: 500px;
+    width: 100%;
+    margin-top: 24px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
-
-.carousel-item h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
+.contact-form-section h3 {
+    color: #fff;
+    font-size: 1.4em;
+    margin-bottom: 16px;
+    font-family: 'Cormorant Garamond', serif;
 }
-
-.carousel-item p {
-    font-size: 1.2em;
-    line-height: 1.4;
+.contact-form-section input,
+.contact-form-section textarea {
+    width: 100%;
+    padding: 10px 14px;
+    margin: 8px 0;
+    background: rgba(107, 74, 50, 0.45);
+    border: 1px solid rgba(180, 140, 110, 0.45);
+    border-radius: 5px;
+    color: #f5ede6;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9em;
+    box-sizing: border-box;
+    transition: border-color 0.2s, background 0.2s;
 }
-
-
-.slick-prev, .slick-next {
-    color: #333;
+.contact-form-section input::placeholder,
+.contact-form-section textarea::placeholder { color: rgba(235, 210, 190, 0.6); }
+.contact-form-section input:focus,
+.contact-form-section textarea:focus {
+    outline: none;
+    background: rgba(107, 74, 50, 0.65);
+    border-color: rgba(210, 170, 140, 0.8);
 }
-/* Ensure that the slick dots are displayed as circular and aligned properly */
-.slick-dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px; /* Adjust as necessary */
-    padding: 0;
+.contact-form-section textarea { resize: vertical; min-height: 110px; }
+.contact-form-section button[type="submit"] {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px;
+    background: rgb(172, 140, 140);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background 0.2s;
 }
+.contact-form-section button[type="submit"]:hover { background: #b08080; }
 
-.slick-dots li {
-    list-style: none;
-    margin: 0 5px; /* Add horizontal space between dots */
+.form-feedback {
+    margin-top: 12px;
+    font-size: 0.9em;
+    border-radius: 4px;
+    padding: 8px 12px;
+    display: none;
 }
-
-.slick-dots li button {
-    font-size: 0; /* Hide the default button text */
-    width: 12px; /* Set the dot width */
-    height: 12px; /* Set the dot height */
-    background-color: #333; /* Default dot color */
-    border-radius: 50%; /* Make them circular */
-    border: none; /* Remove any border around the dots */
-    display: inline-block; /* Make sure they stay inline */
-    padding: 0; /* Remove any padding */
-    margin: 0; /* Remove any margin */
-}
-
-.slick-dots li.slick-active button {
-    background-color: #555; /* Active dot color */
-}
-
-
-
-
+.form-feedback.error   { display: block; background: rgba(200,60,60,0.3);   color: #fbb; }
+.form-feedback.success { display: block; background: rgba(60,160,90,0.3);   color: #bfb; }
 
 
 

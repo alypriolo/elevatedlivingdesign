@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Elevated Living Design & Concierge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        
-        
         <!-- Desktop Navigation -->
         <nav class="desktop-nav">
             <ul>
@@ -20,20 +21,52 @@
                 <li><a href="contact.html">Inquiries</a></li>
             </ul>
         </nav>
-    
-        
+
+        <!-- Hamburger (mobile) -->
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
     </header>
+
+    <!-- Mobile Nav Drawer -->
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Inquiries</a></li>
+        </ul>
+    </nav>
+    <div class="nav-overlay"></div>
 
     <section class="contact-page">
         <div class="contact-info">
+            <!-- Full-width title row -->
             <div class="contact-title">
                 <h2>Get in Touch</h2>
             </div>
+
+            <!-- Left column: contact details -->
             <div class="contact-info-content">
                 <p>Feel free to reach out to us for any inquiries or to schedule a consultation. We're here to help you elevate your living space.</p>
-                <p>Email: <a href="mailto:info@elevatedliving.com">info@elevatedliving.com</a></p>
-                <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-                <p>Address: 123 Design Ave, Stone Harbor, NJ 08210</p>
+                <br>
+                <p>📧 <a href="mailto:info@elevatedliving.com">info@elevatedliving.com</a></p>
+                <p>📞 <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                <p>📍 123 Design Ave, Stone Harbor, NJ 08210</p>
+            </div>
+
+            <!-- Right column: contact form -->
+            <div class="contact-form-section">
+                <h3>Send Us a Message</h3>
+                <form id="contact-form" novalidate>
+                    <input type="text" id="name" name="name" placeholder="Your Name" autocomplete="name" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" autocomplete="email" required>
+                    <input type="text" id="subject" name="subject" placeholder="Subject (optional)" autocomplete="off">
+                    <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+                    <button type="submit">Send Message</button>
+                    <p class="form-feedback" role="alert"></p>
+                </form>
             </div>
         </div>
     </section>

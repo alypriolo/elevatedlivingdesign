@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elevated Living Design & Concierge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        
-        
         <!-- Desktop Navigation -->
         <nav class="desktop-nav">
             <ul>
@@ -20,9 +21,24 @@
                 <li><a href="contact.html">Inquiries</a></li>
             </ul>
         </nav>
-        
-    
+
+        <!-- Hamburger (mobile) -->
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
     </header>
+
+    <!-- Mobile Nav Drawer -->
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Inquiries</a></li>
+        </ul>
+    </nav>
+    <div class="nav-overlay"></div>
     
     
 
@@ -38,7 +54,7 @@
         </section>
         
         <!-- Mission Section -->
-        <section class="vision-container">
+        <section class="vision-container fade-in">
             <div class="vision-content">
                 <h2>Our Vision</h2>
                 <p>Elevated Living Design & Concierge is a premier Home Stylist service provider founded in 2024, located in Stone Harbor, NJ. Our mission is to elevate our clients' living experiences by offering top-notch Home Service Coordination, Logistics Management, and Home Lifestyle Management services.</p>

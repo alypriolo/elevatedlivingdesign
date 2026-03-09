@@ -3,115 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reviews - Elevated Living Designs</title>
+    <title>Reviews - Elevated Living Design & Concierge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
-    <style>
-        .reviews-page {
-            padding: 20px;
-            text-align: center;
-        }
-        .carousel {
-            width: 80%;
-            margin: 0 auto;
-        }
-        .carousel-item {
-            padding: 20px;
-            font-size: 1.2em;
-            color: #333;
-        }
-        .carousel-item p {
-            margin: 0;
-        }
-        .rating {
-            margin-top: 20px;
-            font-size: 1.5em;
-        }
-        .rating span {
-            color: gold;
-        }
-    </style>
 </head>
 <body class="reviews-page-bg">
     <header>
-        
-        
-        <!-- Desktop Navigation -->
         <nav class="desktop-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="process.html">Process</a></li>
-                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="reviews.html" class="active">Reviews</a></li>
                 <li><a href="contact.html">Inquiries</a></li>
             </ul>
         </nav>
-    
-        
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
     </header>
-    <body>
-        <!-- Your HTML content -->
-    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-        <script>
-            $(document).ready(function(){
-                $('.carousel').slick({
-                    infinite: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 3000,
-                    dots: true
-                });
-            });
-        </script>
-    </body>
-    
 
-    <section class="reviews-page">
-        <h2>What Our Clients Are Saying</h2>
-        <div class="carousel">
-            <div class="carousel-item">
-                <p>"Elevated Living Designs transformed our home with their exceptional design skills. Highly recommend!" - Sarah J.</p>
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="reviews.html" class="active">Reviews</a></li>
+            <li><a href="contact.html">Inquiries</a></li>
+        </ul>
+    </nav>
+    <div class="nav-overlay"></div>
+
+    <section class="reviews-section">
+        <div class="reviews-section__inner">
+            <p class="reviews-section__eyebrow">Client Testimonials</p>
+            <h2>What Our Clients Are Saying</h2>
+
+            <div class="review-track">
+                <div class="review-card active">
+                    <div class="review-card__quote">Elevated Living transformed our home with exceptional taste and care. Every detail was handled beautifully — we couldn't be happier.</div>
+                    <div class="review-card__author">Sarah J.</div>
+                    <div class="review-card__stars">★★★★★</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-card__quote">True professionals. They made our Southern NJ home look amazing, and the whole process was completely stress-free.</div>
+                    <div class="review-card__author">Michael R.</div>
+                    <div class="review-card__stars">★★★★★</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-card__quote">Outstanding service and design expertise. From the first consultation to the final install, everything was seamless.</div>
+                    <div class="review-card__author">Emily W.</div>
+                    <div class="review-card__stars">★★★★★</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-card__quote">If you're looking for top-notch interior design in Southern NJ, look no further. Elevated Living is simply fantastic.</div>
+                    <div class="review-card__author">Jessica T.</div>
+                    <div class="review-card__stars">★★★★★</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-card__quote">The design and service exceeded every expectation. They handled everything — we just walked in to a beautiful home.</div>
+                    <div class="review-card__author">John D.</div>
+                    <div class="review-card__stars">★★★★★</div>
+                </div>
             </div>
-            <div class="carousel-item">
-                <p>"The Elevated living design team are true professionals. They made our home in Southern NJ look amazing!" - Michael R.</p>
+
+            <div class="review-dots" role="tablist" aria-label="Reviews navigation">
+                <button class="review-dot active" aria-label="Review 1"></button>
+                <button class="review-dot" aria-label="Review 2"></button>
+                <button class="review-dot" aria-label="Review 3"></button>
+                <button class="review-dot" aria-label="Review 4"></button>
+                <button class="review-dot" aria-label="Review 5"></button>
             </div>
-            <div class="carousel-item">
-                <p>"Outstanding service and design expertise. Elevated Living Designs is the best in the business!" - Emily W.</p>
-            </div>
-            <div class="carousel-item">
-                <p>"If you're looking for top-notch interior design in Southern NJ, look no further. Elevated Living Designs is fantastic!" - Jessica T.</p>
-            </div>
-            <div class="carousel-item">
-                <p>"The design and service provided by Elevated Living Designs exceeded our expectations. Five stars all the way!" - John D.</p>
-            </div>
-        </div>
-        <div class="rating">
-            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5 Star Rating
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Elevated Living Designs. All Rights Reserved.</p>
+        <p>&copy; 2024 Elevated Living Design & Concierge. All Rights Reserved.</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('.carousel').slick({
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                dots: true
-            });
-        });
-    </script>
     <script src="js/script.js"></script>
+    <script>
+        const cards = document.querySelectorAll('.review-card');
+        const dots  = document.querySelectorAll('.review-dot');
+        let current = 0;
+        let timer;
+
+        function goTo(i) {
+            cards[current].classList.remove('active');
+            dots[current].classList.remove('active');
+            current = i;
+            cards[current].classList.add('active');
+            dots[current].classList.add('active');
+        }
+
+        function next() { goTo((current + 1) % cards.length); }
+
+        function start() { timer = setInterval(next, 4500); }
+
+        if (cards.length) {
+            start();
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(timer);
+                    goTo(i);
+                    start();
+                });
+            });
+        }
+    </script>
 </body>
 </html>
